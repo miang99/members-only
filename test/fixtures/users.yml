@@ -10,3 +10,7 @@ two:
 trang:
   name: trang
   email: trang@mail.com
+<<<<<<< HEAD
+=======
+  password_digest: <%= User.digest('password') %>
+>>>>>>> users

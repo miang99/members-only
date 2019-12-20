@@ -42,5 +42,30 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
         assert_select "a[href=?]", logout_path, count: 0
     end
 
+    test "log in with remember me" do
+        log_in_as(@user)
+        assert_equal @user, assigns(:user)
+        asssert_not_empty cookies[:remember_token]
+        
+    end
+
+    test "log in without remember me" do
+        # set up cookies
+        log_in_as(@user)
+        # log in again to check that there no cookies remember = 0
+        log_in_as(@user, remember_me: '0')
+        assert_empty cookies[:remember_token]
+    end
+
+    private
+
+    def log_in_as(user, password: 'password', remember_me: '1')
+        post login_path, params: {session: {email: user.email,
+                                            password: password,
+                                            remember_me: remember_me}}
+      end
+
+
+
   
 end

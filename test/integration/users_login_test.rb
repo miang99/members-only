@@ -45,7 +45,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     test "log in with remember me" do
         log_in_as(@user)
         assert_equal @user, assigns(:user)
-        asssert_not_empty cookies[:remember_token]
+        assert_not_empty cookies[:remember_token]
         
     end
 
@@ -63,7 +63,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
         post login_path, params: {session: {email: user.email,
                                             password: password,
                                             remember_me: remember_me}}
-      end
+    end
 
 
 

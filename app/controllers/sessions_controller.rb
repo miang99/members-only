@@ -8,6 +8,12 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       #create session
       log_in(@user)
+      # set cookies
+      if params[:session][:remember_me] = '1'
+        remember(@user)
+      else
+        forget(@user)
+      end
       flash[:success] = "Welcome back!"
       redirect_to @user
     else
@@ -17,7 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_path
   end
 end

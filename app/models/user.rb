@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     attr_reader :remember_token
+    has_many :posts
     has_secure_password
 
     def self.digest(string)

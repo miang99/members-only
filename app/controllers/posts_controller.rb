@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     def logged_in_user
         if !logged_in?
             flash[:warning] = "Please log in!!!"
-            redirect_to login_path
+            redirect_to path
         end
         
     end

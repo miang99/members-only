@@ -1,7 +1,11 @@
 <% provide(:title, "Profile") %>
 <h1><%= @user.name %> profile</h1>
-<ul>
-  <% @posts.each do |post| %>
-    <%= render post %>
-  <% end %>
-</ul>
+<% if !@posts.empty? %>
+  <ul>
+    <% @posts.each do |post| %>
+      <%= render post %>
+    <% end %>
+  </ul>
+<% else %>
+  <p><%= @user.name %> has not created any post yet.</p>
+<% end %>

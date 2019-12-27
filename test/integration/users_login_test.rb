@@ -54,7 +54,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
         log_in_as(@user)
         # log in again to check that there no cookies remember = 0
         log_in_as(@user, remember_me: '0')
-        assert cookies[:remember_token] # check again???
+        assert_empty cookies[:remember_token] # check again???
     end
 
     private

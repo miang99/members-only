@@ -1,0 +1,49 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+/* general */
+body {
+  padding-top: 60px;
+}
+/*typography*/
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+h2 {
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #777;
+}
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+li {
+  list-style: none;
+}
+/*footer*/
+footer {
+  background-color: #000;
+  margin-top: 45px;
+  padding: 10px;
+  border-top: 1px solid #000;
+  text-align: center;
+  color: whitesmoke;
+}
+/*form*/
+input,
+textarea {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.new-post {
+  margin-top: 8px;
+  a {
+    color: white;
+  }
+}

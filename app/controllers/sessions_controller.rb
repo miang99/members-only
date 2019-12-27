@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       #create session
       log_in(@user)
       # set cookies
-      if params[:session][:remember_me] = '1'
+      if params[:session][:remember_me] == '1'
         remember(@user)
       else
         forget(@user)

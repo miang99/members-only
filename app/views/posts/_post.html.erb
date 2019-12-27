@@ -1,5 +1,13 @@
 <li>
-  <%= post.title %>
-  <%= post.body %>
-  <%= post.author %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2><%= post.title %></h2>
+      <% if logged_in? %>
+        <p><i>posted by <%= post.author %></i></p>
+      <% end %>
+    </div>
+    <div class="panel-body">
+      <p><%= post.body %></p>
+    </div>
+  </div>
 </li>

@@ -1,7 +1,5 @@
 <li>
-  <b>  <%= post.title %></b>
+  <%= post.title %>
   <%= post.body %>
-  <% if logged_in? %>
-    <i><%= post.author %></i>
-  <% end %>
+  <%= post.author %>
 </li>

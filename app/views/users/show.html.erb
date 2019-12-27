@@ -1,2 +1,7 @@
 <% provide(:title, "Profile") %>
 <h1><%= @user.name %> profile</h1>
+<ul>
+  <% @posts.each do |post| %>
+    <%= render post %>
+  <% end %>
+</ul>
